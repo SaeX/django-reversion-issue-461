@@ -8,6 +8,9 @@
 
 <h2>Edit car make {{ object }}</h2>
 
+<h3>User passed via 'current_user' context through 'get_context_data': "{{ current_user }}".</h3>
+<h3>User passed via 'context_processors.request': "{{ request.user }}".</h3>
+
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}

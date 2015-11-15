@@ -18,6 +18,12 @@ class CarMakeUpdateView(generic.UpdateView):
     form_class = CarMakeCreateForm
     model = CarMake
 
+    def get_context_data(self, **kwargs):
+        context = super(CarMakeUpdateView, self).get_context_data(**kwargs)
+        current_user = self.request.user
+        context['current_user'] = current_user
+        return context
+
 
 class CarMakeDetailView(generic.DetailView):
     
